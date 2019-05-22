@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+	
+	var nota1 = prompt("digite a nota do primeiro bimestre:");
+	var nota2 = prompt("digite a nota do segundo bimestre:");
+	var soma = parseFloat(nota1)+parseFloat(nota2);
+
+	if(soma<60){
+
+		alert("Aluno reprovado.Faltaram"+(60-soma)+" pontos");
+
+	}else{
+
+		alert("Aluno aprovado. Nota final = "+soma+" pontos");
+	}
+</script>
+</body>
+</html>

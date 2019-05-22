@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>EX5</title>
+</head>
+<body>
+
+
+<script type="text/javascript">
+	
+	var texto = prompt("Digite um texto qualquer");
+
+	var palavraReplace1 = prompt("Digite uma palavra");
+	var palavraReplace2 = prompt("Digite outra palavra");
+
+	
+
+	var teste = new RegExp(palavraReplace1,'g')
+	var novoTexto = texto.replace(teste, palavraReplace2);
+
+
+
+	alert('O novo texto é  '+novoTexto);
+	
+</script>
+</body>
+</html>

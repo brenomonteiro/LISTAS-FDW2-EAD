@@ -1,0 +1,94 @@
+<!--<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+	
+	var nVezes = prompt("digite  um valor inteiro positivo maior ou igual 2");
+	var nome = prompt("digite se nome");
+	var numeroInt = parseInt(nVezes);
+	
+	for (var i = 0; i<numeroInt; i++) {
+		
+		//document.body.innerHTML =  nome+'<br>';
+		document.write(nome + "<br>")
+		//alert(nVezes);
+	}
+
+	
+	
+	
+</script>
+</body>
+</html>-->
+
+<html>
+<head>
+<title>Sample code - Traversing an HTML Table with JavaScript and DOM Interfaces</title>
+
+<style type="text/css">
+	
+	table, th, td {
+  
+		border: 1px solid black;
+ 		border-collapse: collapse;
+  		text-align: center;
+}
+
+
+</style>
+</head>
+<body>
+
+	 <table id='tabela'>
+  <tr>
+    <th>Base decimal</th>
+    <th>Base binária</th>
+    <th>Base hexadecimal</th>
+  </tr>
+  
+  </tr>
+</table> 
+
+
+<script>
+			var nVezes = prompt("digite  um valor  inteiro  positivo  maior  que dois ");
+	
+			var numeroInt = parseInt(nVezes);
+
+            var table = document.getElementById("tabela");
+
+                for(var i =0; i <=numeroInt; i++){
+                    var linha = document.createElement("tr");
+
+
+                    for(var j=0; j < 3;j++){
+                        
+                         if(j==0){
+                         	var texto = document.createTextNode("" + i);
+                         	 }
+                         if(j==1){
+                         	var texto = document.createTextNode("" + i.toString(2));
+                         	 }
+                         if(j==2){
+                         	var texto = document.createTextNode("" + i.toString(16));
+                         	 }
+                                             
+                        var coluna = document.createElement("td");
+
+                  
+                        coluna.appendChild(texto);
+                        linha.appendChild(coluna);  
+                        table.appendChild(linha);                                                          
+                       
+                    }                 
+                    
+                   
+                }
+                               
+
+</script>
+</body>
+</html>
