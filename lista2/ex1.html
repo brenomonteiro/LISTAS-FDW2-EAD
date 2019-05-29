@@ -6,11 +6,31 @@
 <body>
 	<script type="text/javascript">
 		var mSena = [];
-		for(i = 0;i<=60;i++){
+		var nSorteados = [];
+
+		for(var i = 0;i<=60;i++){
 
 			mSena.push(i);
 		}
-		alert(mSena);
+		//alert(mSena.length);
+
+
+	
+		for(var j =0; j<6;j++){
+
+			var posicao = Math.floor((Math.random() * mSena.length);
+			nSorteados.push(mSena[posicao]);
+			mSena.splice(posicao, 1);
+			//alert('posicao '+posicao);
+			//alert('numero sorteado '+mSena[posicao]);
+			
+			//alert(mSena);
+		}
+
+
+		document.write(nSorteados);
+//fruits.splice(0, 1);
+
 	</script>
 </body>
 </html>
