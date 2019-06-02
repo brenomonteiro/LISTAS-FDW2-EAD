@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style>
+	body{
+		height: 100%;
+		width: 100%;
+	}
+		h2{
+
+			text-align: center;
+		}
+
+		.fundoParede{
+			height: 100%;
+			width: 100%;
+			background-color: red;
+		}
+
+	</style>
+	<script>
+		function mostrarNome(){
+
+			var nome = document.getElementById('txtNome').value;
+			alert(nome);
+		}
+
+		function calcular(simbolo){
+			if (isNaN(parseFloat(document.getElementById('txtValor1').value))||isNaN(parseFloat(document.getElementById('txtValor2').value)))
+				alert('Digite apenas números nos dois campos, e não deixe os campos vazios');
+			else if ((parseFloat(document.getElementById('txtValor1').value) == 0|| parseFloat(document.getElementById('txtValor2').value) == 0)&& simbolo == '/') 
+				alert('Não é possível dividir por 0');
+			else
+				document.getElementById('txtResultado').value = eval(document.getElementById('txtValor1').value + simbolo + document.getElementById('txtValor2').value);
+		}
+
+
+	</script>
+</head>
+<body>
+	<form>
+		<label for="txtValor1">Valor1:</label>
+		<input type="text" name="" id="txtValor1"><br><br>
+		<label for="txtValor2">Valor2:</label>
+		<input type="text" name="" id="txtValor2"><br><br>
+		
+		<input type="button" value="+" onclick="calcular('+')">
+		<input type="button" value="-" onclick="calcular('-')">
+		<input type="button" value="*" onclick="calcular('*')">
+		<input type="button" value="/" onclick="calcular('/')"><br><br>
+
+		<label for="txtResultado">resultado:</label>
+		<input type="text" name="" id="txtResultado"><br><br>
+	</form>
+
+</body>
+</html>

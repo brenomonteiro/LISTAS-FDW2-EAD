@@ -1,0 +1,47 @@
+.fundoParede{
+			height: 100%;
+			width: 100%;
+			background-color: red;
+		}
+		p{
+			display: inline;
+		}
+
+		td{
+			text-align: right;
+		}
+
+		#ultimaColuna{
+
+			text-align: center;
+		}
+
+		#txtValor1{
+			width: 290px;
+		}
+
+		input{
+			margin-bottom: 8px;
+		}
+
+
+		table{
+			border:1px solid black;
+			
+    		margin-left: 35%;
+    		margin-right: auto;
+    		
+		}
+
+		h1{
+			color: blue;
+			font-size: 24px;
+			font-family: "verdana";
+		}
+
+		p{
+			color: red;
+			font-size: 10px;
+			font-family: "verdana";
+
+		}

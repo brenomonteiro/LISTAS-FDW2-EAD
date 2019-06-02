@@ -43,18 +43,14 @@
 
 
 <script>
-
     var nPessoas = prompt('Digite o número de pessoas que vão apresentar');
     var nomes = [];
     var ordemSorteio = [];
-
     for(var i = 0;i<parseInt(nPessoas);i++){
             var nome = prompt('Digite o nome da '+(i+1)+'° pessoa');
             nomes.push(nome);
     }
-
     var nVezes = nomes.length;
-
     for(var j =0; j<nVezes;j++){
             var posicao = Math.floor(Math.random() * nomes.length);
             //ordemSorteio.push(nomes[posicao]);

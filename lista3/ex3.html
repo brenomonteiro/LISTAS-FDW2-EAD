@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+	
+
+	</style>
+	<script>
+		function calcularMedia(){
+			if (isNaN(parseFloat(document.getElementById('txtValor1').value))||isNaN(parseFloat(document.getElementById('txtValor2').value))){
+					alert('Digite apenas números nos dois campos');
+				
+			}	
+			else
+				if((parseFloat(document.getElementById('txtValor1').value) <= 50)&&(parseFloat(document.getElementById('txtValor2').value)<=50))
+						if((parseFloat(document.getElementById('txtValor1').value)+parseFloat(document.getElementById('txtValor2').value)) >=60)
+							alert('Aluno aprovado com '+(parseFloat(document.getElementById('txtValor1').value)+parseFloat(document.getElementById('txtValor2').value))+' pontos');
+						else
+							alert('Aluno reprovado, faltaram '+(60-(parseFloat(document.getElementById('txtValor1').value)+parseFloat(document.getElementById('txtValor2').value)))+' pontos para a aprovação');
+				else
+					alert('cada bimestre vale somente 50 pontos');
+
+				
+		}
+	</script>
+</head>
+<body>
+		<form>
+		<label for="txtValor1">Nota(1° bimestre):</label>
+		<input type="text" name="" id="txtValor1"><br><br>
+		
+		<label for="txtValor2">Nota(2° bimestre):</label>
+		<input type="text" name="" id="txtValor2"><br><br>
+
+		<input type="button" value="Resultado" onclick="calcularMedia()"><br><br>
+
+
+	</form>
+
+		
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+	
+
+	</style>
+	<script>
+		function mostrarDobro(){
+			if (!isNaN(parseFloat(document.getElementById('txtValor1').value)))
+				
+				document.getElementById('txtResultado').value = parseFloat(document.getElementById('txtValor1').value) * 2;
+			else
+				alert('numero invalido');
+		}
+ 
+
+    
+		
+
+
+	</script>
+</head>
+<body>
+		<form>
+		<label for="txtValor1">Digite um valor:</label>
+		<input type="text" name="" id="txtValor1"><br><br>
+		
+		<input type="button" value="Mostrar o dobro" onclick="mostrarDobro()"><br><br>
+
+		<label for="txtResultado">Dobro do valor</label>
+		<input type="text" name="" id="txtResultado" disabled=""><br><br>
+	</form>
+
+		
+</body>
+</html>
