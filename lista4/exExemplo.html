@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+        td{
+            text-align: right;
+        }
+    </style>
+    <script>
+        function validar(padrao){
+             if(padrao == 'DTNS'){
+                var  padraoDataNascimento= /^\d{2}\/\d{2}\/(\d{2}|\d{4})$/;
+
+                 var texto= document.getElementById("texto").value;
+                 padraoDataNascimento.test(texto)?textoPadraoPositivo():alert("Você errou!!");
+
+
+            }else if (padrao == 'CPF'){
+                var padraoCPF = /^\d{3}\.\d{3}\.\d{3}\-\d{2}$/;
+                var texto= document.getElementById("CPF").value;
+                 padraoCPF.test(texto)?textoPadraoPositivo():alert("Você errou!!");
+
+            }else if (padrao == 'MAT'){
+                var padraoMatricula = /^iftm-\d{3}\/\d{3}\-\w{2}$/i;
+                var texto= document.getElementById("matricula").value;
+                 padraoMatricula .test(texto)?textoPadraoPositivo():alert("Você errou!!");
+            }else if (padrao == 'CDP'){
+                var padraoCDP = /^MT-\d{2}\.\d{3}\-IFTM$/;
+                var texto= document.getElementById("cdDisciplina").value;
+                 padraoCDP.test(texto)?textoPadraoPositivo():alert("Você errou!!");
+            }else if (padrao == 'CDP2'){
+                var padraoCDP2 = /^MT-\d{2}\.\d{3}\-(IFTM|iftm)$/
+                var texto= document.getElementById("cdDisciplina2").value;
+                 padraoCDP2.test(texto)?textoPadraoPositivo():alert("Você errou!!");
+            }else if (padrao == 'CDP3'){
+                var padraoCDP3 =  /^M\s?T\-\d{2}\.\d{3}\-I\s?F\s?T\s?M$/i;
+                var texto= document.getElementById("cdDisciplina3").value;
+                 padraoCDP3.test(texto)?textoPadraoPositivo():alert("Você errou!!");
+            }else if (padrao == 'CDP4'){
+                var padraoCDP4 =/^((M|m)\s?(T|t))\-\d{2}\.\d{3}\-((I|i)\s?(F|f)\s?(T|t)\s?(M|m))\s(Uberlândia|Uberlândia Centro)$/
+                var texto= document.getElementById("cdDisciplina4").value;
+                 padraoCDP4.test(texto)?textoPadraoPositivo():alert("Você errou!!");
+            }else if (padrao == 'TEL'){
+                var padraoTelefone = /^\+\d{2}\(\d{2}\)\d{5}-\d{4}$/;
+                var texto= document.getElementById("padraoTel").value;
+                 padraoTelefone.test(texto)?textoPadraoPositivo():alert("Você errou!!");
+            }else if (padrao == 'TEL2'){
+                var padraoTelefone2 = /^\(\d{2,3}\)\d{5}-\d{4}$/; 
+                var texto= document.getElementById("padraoTel2").value;
+                 padraoTelefone2.test(texto)?textoPadraoPositivo():alert("Você errou!!");
+            }else if (padrao == 'FAT'){
+                var padraoFat = /^R\$(\d{1,3}|\d{1,3}\,\d{3}|\d{1,3}\,\d{3}\,\d{3}|\d{1,3}\,\d{3}\,\d{3}\,\d{3}),\d{1,2}$/
+                var texto= document.getElementById("faturamento").value;
+                 padraoFat.test(texto)?textoPadraoPositivo():alert("Você errou!!");
+            }else if (padrao == 'CRON'){
+                var padraoCron = /^([0-1][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]:[0-9][0-9]$/
+                var texto= document.getElementById("cronometro").value;
+                 padraoCron.test(texto)?textoPadraoPositivo():alert("Você errou!!");
+            }
+            
+            
+            
+
+        }
+
+        function textoPadraoPositivo(){
+           
+
+            alert("Passou no teste");
+        }
+    </script>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>
+                <form action="">
+        <label for="texto">Data de nascimento:</label>
+        <input type="text" id="texto">
+        <input type="button" value="Validar" onClick ="validar('DTNS')"><br>
+
+         <label for="CPF">CPF:</label>
+        <input type="text" id="CPF">
+        <input type="button" value="Validar" onClick ="validar('CPF')"><br>
+
+        <label for="matricula">Matricula:</label>
+        <input type="text" id="matricula">
+        <input type="button" value="Validar" onClick ="validar('MAT')"><br>
+
+        <label for="cdDisciplina">Código Matricula:</label>
+        <input type="text" id="cdDisciplina">
+        <input type="button" value="Validar" onClick ="validar('CDP')"><br>
+
+        <label for="cdDisciplina2">Código Matricula 2:</label>
+        <input type="text" id="cdDisciplina2">
+        <input type="button" value="Validar" onClick ="validar('CDP2')"><br>
+
+        <label for="cdDisciplina3">Código Matricula 3:</label>
+        <input type="text" id="cdDisciplina3">
+        <input type="button" value="Validar" onClick ="validar('CDP3')"><br>
+
+        <label for="cdDisciplina4">Código Matricula 4:</label>
+        <input type="text" id="cdDisciplina4">
+        <input type="button" value="Validar" onClick ="validar('CDP4')"><br>
+
+        <label for="padraoTel">Telefone:</label>
+        <input type="text" id="padraoTel">
+        <input type="button" value="Validar" onClick ="validar('TEL')"><br>
+
+        <label for="padraoTel2">Telefone 2:</label>
+        <input type="text" id="padraoTel2">
+        <input type="button" value="Validar" onClick ="validar('TEL2')"><br>
+
+        <label for="faturamento">Faturamento:</label>
+        <input type="text" id="faturamento">
+        <input type="button" value="Validar" onClick ="validar('FAT')"><br>
+
+        <label for="cronometro">Cronômetro:</label>
+        <input type="text" id="cronometro">
+        <input type="button" value="Validar" onClick ="validar('CRON')"><br>
+
+       
+    </form>
+        </td>
+        </tr>
+    </table>
+    
+</body>
+</html>
+
+
+
+    
+

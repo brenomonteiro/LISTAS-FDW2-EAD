@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8"/>
+<title>CRONÔMETRO</title>
+<style type="text/css">
+	
+
+/*html, body {
+	height: 99%;
+}
+body {
+	background-color: #f0f0f0;
+}
+.mostrarValor{
+	text-align: center;
+	border:0px solid white;
+	font-size: 50pt;
+}
+.mostrarValor2{
+	text-align: center;
+	border:0px solid white;
+	font-size: 50pt;
+	animation: fade 10000ms infinite;
+}
+
+.Classexibe{
+	text-align:center;
+}
+.Classexibe2{
+	text-align:center;
+	animation: fade 10000ms infinite;
+}
+section {
+	width: 450px;
+}
+
+.btn {
+	
+	width:100px;
+}
+
+
+@keyframes fade {
+	0% {bakcground-color:white;}
+	25% {background-color:orange;}
+	50% {background-color:green;}
+	75% {background-color:red;}
+	100% {background-color:white;}
+}*/
+</style>
+<script type="text/javascript" lang="javascript">
+	
+
+
+
+var segundo = 0+"0";
+var minuto = 0+"0";
+var hora = 0+"0";
+ 
+function tempo(){	
+   if (segundo < 59){
+      segundo++
+      if(segundo < 10){segundo = "0"+segundo}
+   }else 
+      if(segundo == 59 && minuto < 59){
+         segundo = 0+"0";
+	minuto++;
+	if(minuto < 10){minuto = "0"+minuto}
+      }
+   if(minuto == 59 && segundo == 59 && hora < 23){
+      segundo = 0+"0";
+      minuto = 0+"0";
+      hora++;
+      if(hora < 10){hora = "0"+hora}
+   }else 
+      if(minuto == 59 && segundo == 59 && hora == 23){
+         segundo = 0+"0";
+	minuto = 0+"0";
+	hora = 0+"0";
+      }
+   form.cronometro.value = hora +":"+ minuto +":"+ segundo
+}
+
+function parar(){
+	var pegaVal = form.cronometro.value.split(':');
+	var hora = pegaVal[0];
+	var min= pegaVal[1];
+	var seg = pegaVal[2];
+	form.cronometro.value = hora +":"+ min +":"+ seg;
+}
+
+
+
+/*function PausarCronometro(){
+	if(document.getElementById('btnPausar').value=="PAUSAR"){
+		document.getElementById('btnPausar').value = "VOLTAR";
+		this.evento = "pause";
+	}else{
+		document.getElementById('btnPausar').value = "PAUSAR";
+		this.evento = "start";
+	}
+}
+
+function ResetarCronometro(){
+	document.getElementById('hr').readOnly = false;
+	document.getElementById('min').readOnly = false;
+	document.getElementById('seg').readOnly = false;
+
+
+	document.getElementById('btnIniciar').disabled  = false;
+	document.getElementById('btnResetar').disabled  = true;
+	document.getElementById('btnPausar').disabled  = true;
+	document.getElementById('btnPausar').value = "PAUSAR";
+	this.mostrarValor.value = "00:00";
+
+document.getElementById('mostrarValor').classList.remove('mostrarValor2');
+	document.getElementById('mostrarValor').classList.add('mostrarValor');
+	document.getElementById('exibe').classList.remove('Classexibe2');
+	document.getElementById('exibe').classList.add('Classexibe');*/
+</script>
+</head>
+	<body>
+   <form name="form">
+      <input type="text" name="cronometro" value="00:00:00" />
+      <br />
+      <button type="button" onclick="setInterval('tempo()',983);return false;">play</button>
+      <button type="button" onclick="clearTimeout(setInterval('tempo()',983));">pause</button>
+   </form>
+</body>
+</html>

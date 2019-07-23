@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>css dinamicao com javascript</title>
+    <link rel="stylesheet" href="./css/estilo.css">
+    <script src="./js/funcoes.js"></script>
+</head>
+<body>
+     <div class="navbar">
+        <h1>Personagens da Briga de Rua</h1>
+    </div>
+<div>
+	<div class="bloco">
+	<ul>
+        <li><a href="#" onmouseover="trocarImg(1,'ryu','japao')">Ryu</a></li>
+        <li><a href="#" onmouseover="trocarImg(1,'chun','china')">Chun Li</a></li>
+        <li><a href="#" onmouseover="trocarImg(1,'zang','russia')">Zangief</a></li>
+        <li><a href="#" onmouseover="mover()">Blanka</a></li>
+        <li><a href="#" onmouseover="trocarImg(1,'dalsin','india')">Dalsin</a></li>
+    </ul>
+</div>
+ <div class="bloco2">
+ 	<img id="imgEstrela" src="./img/ryu1.gif">
+    <img id= "cenario" src="./img/cenario1.gif">
+ </div>
+   
+    <div class="bloco bloco3">
+    	<img id="bandeira" src="./img/japao.gif">
+    </div>
+</div>
+    <div class="botoes">
+    	<input id="ataque" type="button" name="" value="Ataque" onclick="trocar(2)" class="btn" >
+    	<input id="" type="button" name="" value="Vitoria" onclick="trocar(3)" class="btn">
+    	<input id="" type="button" name="" value="Cenário" onclick="trocarCenario()" class="btn">		
+    </div>
+    
+</body>
+</html>

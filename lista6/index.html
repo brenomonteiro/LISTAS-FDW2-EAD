@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+var clicado = false;
+var mensagem2;
+var mensagemAlert;
+
+function trocaImg(nome, num) {
+	if (num == 1) {
+		clicado = true;
+	} else if (num == 2 || num == 0) {
+		clearTimeout(mensagem2);
+		clearTimeout(mensagemAlert);
+	} 
+	if (clicado) {
+		document.getElementById("interacao").src = "imagens/alegre.png";
+		document.getElementById("textImg").innerHTML = "Gosto quando você interage comigo";
+		mensagem2 = setTimeout(function () {
+			document.getElementById("textImg").innerHTML = "";
+		}, 4000);
+		//var tempo = parseInt(Math.random() * (15 - 4) + 5) * 1000;
+		var tempo = Math.floor(Math.random() * 16)*1000;
+		console.log(tempo);
+		mensagemAlert = setTimeout(function () {
+			document.getElementById("interacao").src = "imagens/Nervoso.png";
+			document.getElementById("textImg").innerHTML = "Onde está você? Brinque comigo!!!";
+		}, tempo);
+	} else {
+		document.getElementById("interacao").src = "imagens/" + nome + ".png";
+	}
+}
+	</script>
+	<style type="text/css">
+		.boxImg{
+			width: 150px;
+			height: 170px;
+			/*border: 1px solid black;*/
+			text-align: center;
+			position: absolute;
+			top:50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+			-ms-transform: translate(-50%,-50%);
+		}
+	</style>
+</head>
+<body>
+	<div class="boxImg">
+		<img id="interacao" src="imagens/pensativo.png" onmouseover="trocaImg('assustado',0)" onmouseleave="trocaImg('pensativo',2)" onclick="trocaImg('alegre',1)">
+		<p id="textImg"></p>
+	</div>
+	
+</body>
+
+</body>
+</html>
